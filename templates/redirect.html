@@ -1,0 +1,9 @@
+<p class="text-lg text-center mb-4">Click the link below to access your shortened URL:</p>
+<a href="{{id}}" hx-get="/{{id}}" hx-target="#get_link_form" hx-swap="outerHTML" target="_blank" hx-push-url="true"
+    class="btn btn-primary">
+    {{id}}
+</a>
+
+<div id="get_link_form" class="mt-4">
+    <!-- Content will be dynamically loaded here -->
+</div>

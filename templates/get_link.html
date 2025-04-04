@@ -1,0 +1,47 @@
+<div class="flex flex-col lg:flex-row lg:justify-center lg:gap-16 max-w-7xl mx-auto">
+        <!-- Verified Section -->
+        <div class="text-center lg:w-1/2">
+                <p class="text-xl font-semibold mb-4">Already verified? Retrieve your shortened link below:</p>
+                <form action="/get_link/{{id}}" method="post" hx-post="/get_link/{{id}}" hx-target="#email_verify"
+                        class="flex flex-col items-center gap-6">
+                        <label for="name" class="text-lg font-medium w-full max-w-lg">
+                                Enter your name
+                                <input type="text" name="name" id="name" placeholder="Type here"
+                                        class="input input-bordered input-lg w-full mt-2" />
+                        </label>
+                        <label for="email" class="text-lg font-medium w-full max-w-lg">
+                                Enter your email
+                                <input type="email" name="email" id="email" placeholder="Type here"
+                                        class="input input-bordered input-lg w-full mt-2" />
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-wide mt-4">Get Your Link</button>
+                </form>
+                <div id="email_verify" class="mt-6">
+                        <!-- Verification status will appear here -->
+                </div>
+        </div>
+
+        <div class="divider lg:divider-horizontal my-8 lg:my-0">OR</div>
+
+        <!-- First Time Section -->
+        <div class="text-center lg:w-1/2">
+                <p class="text-xl font-semibold mb-4">New here? Register your details to get started:</p>
+                <form action="/link_recipients/{{id}}" method="post" hx-post="/link_recipients/{{id}}"
+                        hx-target="#email_sent" class="flex flex-col items-center gap-6">
+                        <label for="name_first_time" class="text-lg font-medium w-full max-w-lg">
+                                Enter your name
+                                <input type="text" name="name" id="name_first_time" placeholder="Type here"
+                                        class="input input-bordered input-lg w-full mt-2" />
+                        </label>
+                        <label for="email_first_time" class="text-lg font-medium w-full max-w-lg">
+                                Enter your email
+                                <input type="email" name="email" id="email_first_time" placeholder="Type here"
+                                        class="input input-bordered input-lg w-full mt-2" />
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-wide mt-4">Send Email for Verification</button>
+                </form>
+                <div id="email_sent" class="mt-6">
+                        <!-- Email sent status will appear here -->
+                </div>
+        </div>
+</div>
