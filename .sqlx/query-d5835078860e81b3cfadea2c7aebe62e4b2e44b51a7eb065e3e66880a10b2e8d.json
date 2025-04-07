@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "update links_tokens set status = 'confirmed' where link_token  = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d5835078860e81b3cfadea2c7aebe62e4b2e44b51a7eb065e3e66880a10b2e8d"
+}

@@ -1,0 +1,17 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n    INSERT INTO link_recipients (id, email, name, received_link_at)\n    VALUES ($1, $2, $3, $4)\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text",
+        "Text",
+        "Timestamptz"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "7ab4086686cab12c0b30cb8d8ebfc328af51ca00ca2da89ae1b9d773776be84c"
+}

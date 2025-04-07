@@ -1,0 +1,22 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE links_tokens SET status = 'confirmed' WHERE link_token = $1 RETURNING link_id",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "link_id",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "9fd4cafd2ba5d8a4b1fb4765e924d65a16e749d8396d52644bea40219652bca8"
+}
