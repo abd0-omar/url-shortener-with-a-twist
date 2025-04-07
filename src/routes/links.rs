@@ -66,6 +66,7 @@ pub async fn create_link(
         .map_err(|_| LinkError::InvalidUrl(new_link.target_url))?
         .to_string();
 
+    #[allow(clippy::never_loop)]
     for _ in 1..=3 {
         let new_link_id = generate_id();
         let time_now = Utc::now();

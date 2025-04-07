@@ -1,4 +1,3 @@
-use anyhow;
 use url_shortener_with_a_twist::{
     configuration::get_configuration,
     startup::Application,
@@ -18,5 +17,5 @@ async fn main() -> anyhow::Result<()> {
 
     let application = Application::build(configuration).await?;
 
-    Ok(application.run_until_stopped().await?)
+    application.run_until_stopped().await
 }

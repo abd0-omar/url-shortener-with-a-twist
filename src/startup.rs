@@ -68,7 +68,7 @@ pub async fn run(
                 .on_response(|response: &Response, latency: Duration, span: &Span| {
                     let status = response.status();
                     let headers = response.headers();
-                    span.record("status", &status.as_u16());
+                    span.record("status", status.as_u16());
                     info!(parent: span, ?status, ?headers, ?latency, "Response sent");
                 }),
         );

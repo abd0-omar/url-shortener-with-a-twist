@@ -62,7 +62,7 @@ pub async fn access_link(
         Err(_) => {
             return Ok(Html(
                 EmailNotVerified {
-                    email: &new_recipient.email.as_ref(),
+                    email: new_recipient.email.as_ref(),
                 }
                 .render()
                 .unwrap(),
@@ -228,9 +228,7 @@ impl IntoResponse for RecipientError {
             }
             RecipientError::DuplicateEmail => {
                 tracing::error!("Duplicate email error occurred");
-                let html = format!(
-                    "<h1>Email already registered</h1><p>Please use a different email, or try to sign in</p>"
-                );
+                let html = "<h1>Email already registered</h1><p>Please use a different email, or try to sign in</p>".to_string();
                 (StatusCode::CONFLICT, Html(html)).into_response()
             }
         }
